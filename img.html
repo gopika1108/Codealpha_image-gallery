@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial scale=1.0">
+        <title>Image Gallary</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Image Gallary</h1>
+       <div class="gallary">
+        <img src="image gallary/img1.jpg" onclick="openlightbox(0)">
+        <img src="image gallary/img2.jpg" onclick="openlightbox(1)">
+        <img src="image gallary/img3.jpg" onclick="openlightbox(2)">
+        <img src="image gallary/img4.jpg" onclick="openlightbox(3)">
+        <img src="image gallary/img5.jpg" onclick="openlightbox(4)">
+        <img src="image gallary/img6.jpg" onclick="openlightbox(5)">
+        <img src="image gallary/img7.jpg" onclick="openlightbox(6)">
+        
+       </div>
+
+       <div id="lightbox">
+       <span class="close" onclick="closelightbox()">x</span>
+       <button onclick ="prev()"><</button>
+       <img id="lightbox-img">
+       <button onclick="next()">></button>
+       </div>
+
+       <script>
+        let images=["image gallary/img1.jpg","image gallary/img2.jpg","image gallary/img3.jpg","image gallary/img4.jpg","image gallary/img5.jpg","image gallary/img6.jpg","image gallary/img7.jpg" ];
+        let index=0;
+
+        function openlightbox(i){
+            index=i;
+            document.getElementById("lightbox").style.display="flex";
+            document.getElementById("lightbox-img").src=images[index];
+        }
+
+        function closelightbox(){
+            document.getElementById("lightbox").style.display="none";
+        }
+
+        function next(){
+            if(index<images.length-1){
+                index++;
+            document.getElementById("lightbox-img").src=images[index];
+        }
+    }
+        function prev(){
+            if(index>0){
+                index--;
+            
+            document.getElementById("lightbox-img").src=images[index];
+        }
+    }
+       </script>
+    </body>
+</html>

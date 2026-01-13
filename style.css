@@ -1,0 +1,60 @@
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:20px;
+}
+body{
+font-family:Arial, Helvetica, sans-serif;
+text-align: center;
+}
+.gallary{
+    display:grid;
+    grid flex-direction: rows;
+    gap:15px;
+    padding: 20px;
+}
+.gallary img{
+    width:100%;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.gallary img:hover{
+    transform:scale(1.05);
+}
+#lightbox{
+    display:none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background:rgba(0,0,0,0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+#lightbox img{
+    width:60%;
+    max-height:80%;
+
+}
+
+#lightbox button{
+    background:none;
+    color:white;
+    font-size:30px;
+    border:none;
+    cursor: pointer;
+    margin:20px;
+}
+
+.close{
+    position: absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:30px;
+    cursor: pointer;
+}
